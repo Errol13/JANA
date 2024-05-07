@@ -58,9 +58,6 @@ flutter:
     - assets/map_splash.png
     - assets/JANA LOGO.png
     - assets/JANA dark.png
-  assets:
-  - assets/map.png
-  - assets/JANA dark.png
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
