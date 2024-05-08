@@ -36,6 +36,9 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
   flutter_svg: ^2.0.10
+  animated_toggle_switch: ^0.8.2
+  loading_animation_widget: ^1.2.1
+  card_loading: ^0.3.2
 
 dev_dependencies:
   flutter_test:
@@ -54,10 +57,7 @@ dev_dependencies:
 # The following section is specific to Flutter packages.
 flutter:
   assets:
-    - assets/map.png
-    - assets/map_splash.png
-    - assets/JANA LOGO.png
-    - assets/JANA dark.png
+    - assets/
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in

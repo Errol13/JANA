@@ -4,11 +4,13 @@ class CustomButton extends StatelessWidget {
   final String text;
   final Color color;
   final double width; // New property to specify the button width
+  final VoidCallback onPressed; // Callback function for button press
 
   const CustomButton({
     Key? key,
     required this.text,
     required this.color,
+    required this.onPressed, // Pass the callback function
     this.width = 200, // Default to 200 width
   }) : super(key: key);
 
@@ -17,9 +19,7 @@ class CustomButton extends StatelessWidget {
     return SizedBox(
       width: width, // Set the width of the button
       child: ElevatedButton(
-        onPressed: () {
-          // Perform action
-        },
+        onPressed: onPressed, // Use the passed callback function
         style: ButtonStyle(
           backgroundColor: MaterialStateProperty.all<Color>(
             color,
@@ -40,7 +40,7 @@ class CustomButton extends StatelessWidget {
           text,
           style: TextStyle(
             color: Colors.white,
-            fontSize: 18, // Adjust the font size as needed
+            fontSize: 18,
           ),
         ),
       ),

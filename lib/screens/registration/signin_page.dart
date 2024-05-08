@@ -8,7 +8,9 @@ Description: This is where the user can login to their existing account.
 import 'package:flutter/material.dart';
 import 'package:jana_project/reusable%20code/border_style.dart';
 import 'package:jana_project/reusable%20code/buttons.dart';
+import 'package:jana_project/screens/driver/homepage_driver.dart';
 import 'package:jana_project/screens/registration/signup_pass_page.dart';
+import 'package:jana_project/screens/passenger/homepage_passenger.dart';
 
 class SignInPage extends StatelessWidget {
   @override
@@ -167,10 +169,39 @@ class SignInPage extends StatelessWidget {
                       ],
                     ),
                     SizedBox(height: 30),
-                    CustomButton(
-                      text: 'Login',
-                      color: Color(0xFFFA5FAE), // Set button color to pink
+
+                    Row(
+                      children: <Widget>[
+                        CustomButton(
+                          text: 'Login D',
+                          color: Color(0xFFFA5FAE), // Set button color to pink
+                          width: 170,
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => DhomePage()),
+                            );
+                          },
+                        ),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        CustomButton(
+                          text: 'Login P',
+                          color: Color(0xFFFA5FAE), // Set button color to pink
+                          width: 170,
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => PhomePage()),
+                            );
+                          },
+                        ),
+                      ],
                     ),
+
                     SizedBox(
                         height:
                             10), // Adjust the space between password field and "Forgot password?" text

@@ -178,6 +178,7 @@ class _RootPageState extends State<RootPage> {
                   CustomButton(
                     text: 'Sign Up',
                     color: Color(0xFFFA5FAE), // Set button color to pink
+                    onPressed: () {},
                   ),
                 ],
               ),
