@@ -1,26 +1,22 @@
-/* Authored by: Xavier D. Santiago
-Company: APEX Mire
-Project: JANA
-Feature: [JANA-002] Sign Up/Registration page
-Description: This is where the user can register their account.
- */
 import 'package:flutter/material.dart';
 import 'package:jana_project/reusable%20code/border_style.dart';
 import 'package:jana_project/reusable%20code/buttons.dart';
+import 'package:jana_project/screens/registration/signup_2driver_page.dart';
 
-class RootPage extends StatefulWidget {
-  const RootPage({Key? key}) : super(key: key);
+class DriverPage extends StatefulWidget {
+  const DriverPage({Key? key}) : super(key: key);
 
   @override
-  _RootPageState createState() => _RootPageState();
+  _DriverPageState createState() => _DriverPageState();
 }
 
-class _RootPageState extends State<RootPage> {
+class _DriverPageState extends State<DriverPage> {
   bool _passwordVisible = false;
   bool _confirmPasswordVisible = false;
 
   @override
   Widget build(BuildContext context) {
+    
     return Scaffold(
       backgroundColor: Color(0xff63831A4),
       appBar: AppBar(
@@ -120,16 +116,6 @@ class _RootPageState extends State<RootPage> {
                     },
                   ),
                   const SizedBox(height: 25),
-                  // Contact Number TextField
-                  TextFormField(
-                    decoration: InputDecoration(
-                      labelText: 'Contact Number',
-                      labelStyle: TextStyle(color: Colors.grey),
-                      focusedBorder: AppBorderStyles.focusedBorder,
-                      enabledBorder: AppBorderStyles.enabledBorder,
-                    ),
-                  ),
-                  const SizedBox(height: 25),
                   // Password TextField with visibility toggle
                   TextFormField(
                     decoration: InputDecoration(
@@ -178,9 +164,15 @@ class _RootPageState extends State<RootPage> {
                   const SizedBox(height: 25),
                   // Sign Up Button
                   CustomButton(
-                    text: 'Sign Up',
+                    text: 'Next',
                     color: Color(0xFFFA5FAE), // Set button color to pink
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => Driver2Page()),
+                            );
+                    },
                   ),
                 ],
               ),

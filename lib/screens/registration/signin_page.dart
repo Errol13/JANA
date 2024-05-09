@@ -10,6 +10,7 @@ import 'package:jana_project/reusable%20code/border_style.dart';
 import 'package:jana_project/reusable%20code/buttons.dart';
 import 'package:jana_project/screens/driver/homepage_driver.dart';
 import 'package:jana_project/screens/registration/signup_pass_page.dart';
+import 'package:jana_project/screens/registration/signup_1driver_page.dart';
 import 'package:jana_project/screens/passenger/homepage_passenger.dart';
 
 class SignInPage extends StatelessWidget {
@@ -55,6 +56,8 @@ class SignInPage extends StatelessWidget {
               child: Container(
                 width: double.infinity,
                 decoration: BoxDecoration(
+                  border: Border(
+                        top: BorderSide(color: Color(0xFFFA5FAE), width: 3)),
                   color: Colors.white,
                   borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(30.0),
@@ -189,7 +192,7 @@ class SignInPage extends StatelessWidget {
                         ),
                         CustomButton(
                           text: 'Login P',
-                          color: Color(0xFFFA5FAE), // Set button color to pink
+                          color:  Color(0xFFFA5FAE), // Set button color to pink
                           width: 170,
                           onPressed: () {
                             Navigator.push(
@@ -241,7 +244,11 @@ class SignInPage extends StatelessWidget {
                       children: [
                         TextButton(
                           onPressed: () {
-                            // Add your forgot password functionality here
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => DriverPage()),
+                            );
                           },
                           child: RichText(
                             text: TextSpan(
