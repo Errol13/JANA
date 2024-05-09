@@ -5,6 +5,7 @@ import 'package:jana_project/reusable%20code/border_style.dart';
 import 'package:jana_project/reusable%20code/buttons.dart';
 import 'package:animated_toggle_switch/animated_toggle_switch.dart';
 import 'package:jana_project/screens/passenger/passenger_looking.dart';
+import 'package:jana_project/screens/profile/profile.dart';
 import 'package:jana_project/screens/registration/signin_page.dart';
 import 'package:card_loading/card_loading.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
@@ -238,7 +239,12 @@ class _DriverFoundState extends State<DriverFoundPage> {
             ListTile(
               leading: Icon(Icons.account_circle),
               title: Text('View Profile'),
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => ProfilePage()),
+                );
+              },
             ),
             ListTile(
               leading: Icon(Icons.history_edu),
