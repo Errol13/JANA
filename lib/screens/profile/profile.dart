@@ -46,94 +46,153 @@ class _ProfileState extends State<ProfilePage> {
             Image.asset('assets/Ellipse 11.png'),
             Container(
               decoration: BoxDecoration(
-                border: Border.all(width: 1),
-              ),
+                  borderRadius: BorderRadius.all(Radius.circular(15.0)),
+                  color: Colors.white,
+                  border: Border.all(width: 1),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey.withOpacity(0.9),
+                      spreadRadius: 5,
+                      blurRadius: 7,
+                      offset: Offset(1.0, 1.5),
+                    ),
+                  ]),
               margin: const EdgeInsets.only(left: 20.0, right: 20.0),
               child: Column(
                 children: [
+                  SizedBox(height: 10),
                   Row(
                     children: [
                       SizedBox(
-                        width: 10,
+                        width: 15,
                       ),
                       Text('Name'),
                       Expanded(child: SizedBox()),
                       Icon(
                         Icons.edit,
                         color: Color.fromARGB(255, 56, 46, 184),
+                      ),
+                      SizedBox(
+                        width: 10,
+                      ),
+                    ],
+                  ),
+                  Row(
+                    children: [
+                      SizedBox(
+                        width: 15,
+                      ),
+                      Text(
+                        'Babe ko',
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, fontSize: 20),
                       )
                     ],
                   ),
-                  Row(
-                    children: [
-                      SizedBox(
-                        width: 10,
-                      ),
-                      Text('Babe ko')
-                    ],
-                  )
+                  SizedBox(height: 10),
                 ],
               ),
             ),
             SizedBox(
-              height: 5,
+              height: 13,
             ),
             Container(
               decoration: BoxDecoration(
-                border: Border.all(width: 1),
-              ),
+                  borderRadius: BorderRadius.all(Radius.circular(15.0)),
+                  color: Colors.white,
+                  border: Border.all(width: 1),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey.withOpacity(0.9),
+                      spreadRadius: 5,
+                      blurRadius: 7,
+                      offset: Offset(1.0, 1.5),
+                    ),
+                  ]),
               margin: const EdgeInsets.only(left: 20.0, right: 20.0),
               child: Column(
                 children: [
+                  SizedBox(height: 10),
                   Row(
                     children: [
                       SizedBox(
-                        width: 10,
+                        width: 15,
                       ),
                       Text('Email'),
                       Expanded(child: SizedBox()),
-                      Icon(Icons.edit, color: Color.fromARGB(255, 56, 46, 184))
+                      Icon(
+                        Icons.edit,
+                        color: Color.fromARGB(255, 56, 46, 184),
+                      ),
+                      SizedBox(
+                        width: 10,
+                      ),
                     ],
                   ),
                   Row(
                     children: [
                       SizedBox(
-                        width: 10,
+                        width: 15,
                       ),
-                      Text('msamonte@gmail.com')
+                      Text(
+                        'msamonte@gmail.com',
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, fontSize: 20),
+                      )
                     ],
-                  )
+                  ),
+                  SizedBox(height: 10),
                 ],
               ),
             ),
             SizedBox(
-              height: 5,
+              height: 13,
             ),
             Container(
               decoration: BoxDecoration(
-                border: Border.all(width: 1),
-              ),
+                  borderRadius: BorderRadius.all(Radius.circular(15.0)),
+                  color: Colors.white,
+                  border: Border.all(width: 1),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey.withOpacity(0.9),
+                      spreadRadius: 5,
+                      blurRadius: 7,
+                      offset: Offset(1.0, 1.5),
+                    ),
+                  ]),
               margin: const EdgeInsets.only(left: 20.0, right: 20.0),
               child: Column(
                 children: [
+                  SizedBox(height: 10),
                   Row(
                     children: [
                       SizedBox(
-                        width: 10,
+                        width: 15,
                       ),
                       Text('Mobile Number'),
                       Expanded(child: SizedBox()),
-                      Icon(Icons.edit, color: Color.fromARGB(255, 56, 46, 184))
+                      Icon(Icons.edit, color: Color.fromARGB(255, 56, 46, 184)),
+                      SizedBox(
+                        width: 10,
+                      ),
                     ],
                   ),
                   Row(
                     children: [
                       SizedBox(
-                        width: 10,
+                        width: 15,
                       ),
-                      Text('09786651527')
+                      Text(
+                        '09786651527',
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, fontSize: 20),
+                      )
                     ],
-                  )
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
                 ],
               ),
             )
