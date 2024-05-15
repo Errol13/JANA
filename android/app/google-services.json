@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "172520128766",
+    "project_id": "jana-b97b7",
+    "storage_bucket": "jana-b97b7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:172520128766:android:2e77c67595375bf657e5af",
+        "android_client_info": {
+          "package_name": "com.example.jana_project"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD4Tf_WG_qCWeYD4-n5xOUhiqpXZI4871s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
