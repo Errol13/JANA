@@ -39,6 +39,8 @@ dependencies:
   animated_toggle_switch: ^0.8.2
   loading_animation_widget: ^1.2.1
   card_loading: ^0.3.2
+  flutter_rating_bar: ^4.0.1
+  drop_shadow: ^0.1.0
 
 dev_dependencies:
   flutter_test:
