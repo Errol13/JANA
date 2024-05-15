@@ -4,7 +4,7 @@ import 'package:flutter/widgets.dart';
 import 'package:jana_project/reusable%20code/border_style.dart';
 import 'package:jana_project/reusable%20code/buttons.dart';
 import 'package:animated_toggle_switch/animated_toggle_switch.dart';
-import 'package:jana_project/screens/passenger/commuter_pickup.dart';
+import 'package:jana_project/screens/passenger/homepage_passenger.dart';
 import 'package:jana_project/screens/passenger/passenger_looking.dart';
 import 'package:jana_project/screens/profile/history.dart';
 import 'package:jana_project/screens/profile/profile.dart';
@@ -12,19 +12,19 @@ import 'package:jana_project/screens/profile/settings.dart';
 import 'package:jana_project/screens/registration/signin_page.dart';
 import 'package:card_loading/card_loading.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
-class DriverFoundPage extends StatefulWidget {
-  const DriverFoundPage({Key? key}) : super(key: key);
+class FeedBackPage extends StatefulWidget {
+  const FeedBackPage({Key? key}) : super(key: key);
 
   @override
-  _DriverFoundState createState() => _DriverFoundState();
+  _FeedBackState createState() => _FeedBackState();
 }
 
-class _DriverFoundState extends State<DriverFoundPage> {
+class _FeedBackState extends State<FeedBackPage> {
   void initState() {
     super.initState();
     _navigateToDialog();
-    _navigateToNextScreen();
   }
 
   void _navigateToDialog() {
@@ -36,47 +36,40 @@ class _DriverFoundState extends State<DriverFoundPage> {
     );
   }
 
-  void _navigateToNextScreen() {
-    Future.delayed(
-      Duration(seconds: 10),
-      () {
-        Navigator.pushReplacement(
-          context,
-          MaterialPageRoute(builder: (context) => CPickupPage()),
-        );
-      },
-    );
-  }
-
   void showAutoDismissAlert(BuildContext context) {
     showDialog(
       context: context,
       builder: (context) {
         // Schedule a delayed dismissal of the alert dialog after 3 seconds
-        Future.delayed(Duration(seconds: 5), () {
-          Navigator.of(context).pop(); // Close the dialog
-        });
 
         // Return the AlertDialog widget
         return AlertDialog(
           contentPadding: EdgeInsets.zero,
           content: Container(
-            height: 190,
+            height: 200,
             decoration: BoxDecoration(
                 color: Colors.white,
                 border: Border.all(width: 1, color: Color(0xFF0053AD)),
                 borderRadius: BorderRadius.circular(10)),
             child: Column(
               children: [
-                SizedBox(
-                  height: 15,
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    IconButton(
+                        padding: EdgeInsets.zero,
+                        onPressed: () {
+                          Navigator.of(context).pop();
+                        },
+                        icon: Icon(Icons.close))
+                  ],
                 ),
                 Row(
                   children: [
                     Expanded(
                         child: Container(
                       child: Text(
-                        'We found you a driver!',
+                        'Rate your experience',
                         style: TextStyle(
                             fontWeight: FontWeight.bold, fontSize: 20),
                         textAlign: TextAlign.center,
@@ -87,81 +80,42 @@ class _DriverFoundState extends State<DriverFoundPage> {
                 SizedBox(
                   height: 5,
                 ),
-                Row(
-                  children: [
-                    SizedBox(
-                      width: 20,
-                    ),
-                    Image.asset(
-                      'assets/Ellipse 11.png',
-                      scale: 6,
-                    ),
-                    SizedBox(
-                      width: 10,
-                    ),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Row(
-                          children: [
-                            Text(
-                              'Miguel Samonte',
-                              style: TextStyle(
-                                  fontSize: 16, fontWeight: FontWeight.bold),
-                            ),
-                          ],
-                        ),
-                        SizedBox(
-                          height: 2,
-                        ),
-                        Row(
-                          children: [
-                            Text(
-                              textAlign: TextAlign.left,
-                              '09123456789',
-                              style: TextStyle(
-                                fontSize: 12,
-                              ),
-                            )
-                          ],
-                        ),
-                        Row(
-                          children: [
-                            Text(
-                              '6.9/10',
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold, fontSize: 14),
-                            ),
-                            SizedBox(
-                              width: 5,
-                            ),
-                            Icon(
-                              Icons.star,
-                              color: Color(0xFFDEF00B),
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
-                  ],
+                RatingBar.builder(
+                  initialRating: 0,
+                  minRating: 1,
+                  direction: Axis.horizontal,
+                  allowHalfRating: true,
+                  itemCount: 5,
+                  itemPadding: EdgeInsets.symmetric(horizontal: 1.0),
+                  itemBuilder: (context, _) => Icon(
+                    Icons.star,
+                    color: Color(0xFFDEF00B),
+                  ),
+                  onRatingUpdate: (rating) {
+                    print(rating);
+                  },
                 ),
                 SizedBox(
-                  height: 10,
+                  height: 5,
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    SizedBox(),
-                    Text(
-                      '15800001425360',
-                      style: TextStyle(fontWeight: FontWeight.bold),
+                ElevatedButton(
+                  child: Text(
+                    'Submit',
+                    style: TextStyle(
+                        color: Color.fromARGB(255, 255, 255, 255),
+                        fontSize: 18),
+                  ),
+                  style: ElevatedButton.styleFrom(
+                    padding: EdgeInsets.symmetric(vertical: 2, horizontal: 80),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(15),
                     ),
-                    SizedBox(),
-                    Text('ETA 40s',
-                        style: TextStyle(fontWeight: FontWeight.bold)),
-                    SizedBox()
-                  ],
-                )
+                    backgroundColor: Color(0xFF3831A4),
+                  ),
+                  onPressed: () {
+                    Navigator.of(context).pop();
+                  },
+                ),
               ],
             ),
           ),
@@ -204,17 +158,10 @@ class _DriverFoundState extends State<DriverFoundPage> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           SizedBox(
-                            height: 25,
+                            height: 35,
                           ),
                           Text(
-                            'Estimated time of arrival',
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 12,
-                                fontWeight: FontWeight.normal),
-                          ),
-                          Text(
-                            '8 mins.',
+                            'You\'re here!',
                             style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 30,
@@ -235,22 +182,20 @@ class _DriverFoundState extends State<DriverFoundPage> {
                                         BorderRadius.all(Radius.circular(10))),
                                 margin: EdgeInsets.only(bottom: 10),
                               ),
-                              CardLoading(
-                                cardLoadingTheme: CardLoadingTheme(
-                                    colorOne: Colors.white,
-                                    colorTwo:
-                                        Color.fromARGB(255, 165, 164, 164)),
+                              Container(
                                 height: 10,
                                 width: 80,
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(10)),
+                                decoration: BoxDecoration(
+                                    color: Colors.white,
+                                    borderRadius:
+                                        BorderRadius.all(Radius.circular(10))),
                                 margin: EdgeInsets.only(bottom: 10),
                               ),
                               Container(
                                 height: 10,
                                 width: 80,
                                 decoration: BoxDecoration(
-                                    color: Color.fromARGB(255, 165, 164, 164),
+                                    color: Colors.white,
                                     borderRadius:
                                         BorderRadius.all(Radius.circular(10))),
                                 margin: EdgeInsets.only(bottom: 10),
@@ -263,18 +208,11 @@ class _DriverFoundState extends State<DriverFoundPage> {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Text('Your driver is on his way',
+                              Text('You have arrived at your destination',
                                   style: TextStyle(
                                       color: Colors.white,
                                       fontSize: 15,
                                       fontWeight: FontWeight.bold)),
-                              SizedBox(
-                                width: 10,
-                              ),
-                              LoadingAnimationWidget.waveDots(
-                                color: Colors.white,
-                                size: 20,
-                              ),
                             ],
                           ),
                           SizedBox(
@@ -354,6 +292,19 @@ class _DriverFoundState extends State<DriverFoundPage> {
                 ],
               ),
             ),
+            Container(
+              child: Align(
+                alignment: Alignment.topRight,
+                child: IconButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => PhomePage()),
+                      );
+                    },
+                    icon: Icon(Icons.close)),
+              ),
+            )
           ],
         ),
       ),

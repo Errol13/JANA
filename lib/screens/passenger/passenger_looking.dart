@@ -3,6 +3,9 @@ import 'package:jana_project/reusable%20code/border_style.dart';
 import 'package:jana_project/reusable%20code/buttons.dart';
 import 'package:animated_toggle_switch/animated_toggle_switch.dart';
 import 'package:jana_project/screens/passenger/driver_found.dart';
+import 'package:jana_project/screens/profile/history.dart';
+import 'package:jana_project/screens/profile/profile.dart';
+import 'package:jana_project/screens/profile/settings.dart';
 import 'package:jana_project/screens/registration/signin_page.dart';
 
 class PassengerLookingPage extends StatefulWidget {
@@ -79,20 +82,31 @@ class _PassengerLookingState extends State<PassengerLookingPage> {
             ListTile(
               leading: Icon(Icons.account_circle),
               title: Text('View Profile'),
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => ProfilePage()),
+                );
+              },
             ),
             ListTile(
               leading: Icon(Icons.history_edu),
               title: Text('Booking History'),
               onTap: () {
-                Navigator.pop(context);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => HistoryPage()),
+                );
               },
             ),
             ListTile(
               leading: Icon(Icons.settings),
               title: Text('Settings'),
               onTap: () {
-                Navigator.pop(context);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => SettingsPage()),
+                );
               },
             ),
             Expanded(child: SizedBox()),
