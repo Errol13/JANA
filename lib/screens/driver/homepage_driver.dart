@@ -3,6 +3,7 @@ import 'package:jana_project/reusable%20code/border_style.dart';
 import 'package:jana_project/reusable%20code/buttons.dart';
 import 'package:animated_toggle_switch/animated_toggle_switch.dart';
 import 'package:jana_project/screens/registration/signin_page.dart';
+import 'package:jana_project/screens/driver/driver_accept.dart';
 
 class DhomePage extends StatefulWidget {
   const DhomePage({Key? key}) : super(key: key);
@@ -114,15 +115,25 @@ class _DhomePageState extends State<DhomePage> {
                     SizedBox(
                       height: 20,
                     ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          'Your Statistics',
-                          style:
-                              TextStyle(color: Color(0xFFFA5FAE), fontSize: 25),
-                        ),
-                      ],
+                    GestureDetector(
+                      onTap: () {
+                        // Redirect to other page
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => DacceptPage()),
+                        );
+                      },
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            'Your Statistics',
+                            style: TextStyle(
+                                color: Color(0xFFFA5FAE), fontSize: 25),
+                          ),
+                        ],
+                      ),
                     ),
                     SizedBox(
                       height: 20,

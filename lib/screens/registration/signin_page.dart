@@ -57,7 +57,7 @@ class SignInPage extends StatelessWidget {
                 width: double.infinity,
                 decoration: BoxDecoration(
                   border: Border(
-                        top: BorderSide(color: Color(0xFFFA5FAE), width: 3)),
+                      top: BorderSide(color: Color(0xFFFA5FAE), width: 3)),
                   color: Colors.white,
                   borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(30.0),
@@ -192,7 +192,7 @@ class SignInPage extends StatelessWidget {
                         ),
                         CustomButton(
                           text: 'Login P',
-                          color:  Color(0xFFFA5FAE), // Set button color to pink
+                          color: Color(0xFFFA5FAE), // Set button color to pink
                           width: 170,
                           onPressed: () {
                             Navigator.push(
@@ -205,68 +205,92 @@ class SignInPage extends StatelessWidget {
                       ],
                     ),
 
-                    SizedBox(
-                        height:
-                            10), // Adjust the space between password field and "Forgot password?" text
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        TextButton(
-                          onPressed: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => RootPage()),
-                            );
-                          },
-                          child: RichText(
-                            text: TextSpan(
-                              style: TextStyle(
-                                color: Colors.grey,
-                                decoration: TextDecoration.underline,
-                                fontWeight: FontWeight.bold,
-                              ),
-                              children: [
-                                TextSpan(
-                                  text: 'Sakay na!',
+                    SizedBox(height:10), // Adjust the space between password field and "Forgot password?" text
+                    Center(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: <Widget>[
+                              Expanded(
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: <Widget>[
+                                    Text(
+                                      'New Commuter?',
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(fontSize: 15),
+                                    ),
+                                  ],
                                 ),
-                              ],
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                    SizedBox(
-                        height:
-                            10), // Adjust the space between password field and "Forgot password?" text
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        TextButton(
-                          onPressed: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => DriverPage()),
-                            );
-                          },
-                          child: RichText(
-                            text: TextSpan(
-                              style: TextStyle(
-                                color: Colors.grey,
-                                decoration: TextDecoration.underline,
-                                fontWeight: FontWeight.bold,
                               ),
-                              children: [
-                                TextSpan(
-                                  text: 'Pasada na!',
+                              Expanded(
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: <Widget>[
+                                    Text(
+                                      'New Driver?',
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(fontSize: 15),
+                                    ),
+                                  ],
                                 ),
-                              ],
-                            ),
+                              ),
+                            ],
                           ),
-                        ),
-                      ],
-                    ),
+                          SizedBox(height: 0.2),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: <Widget>[
+                              Expanded(
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: <Widget>[
+                                    TextButton(
+                                      onPressed: () {
+                                        Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) => RootPage()),
+                                        );
+                                      },
+                                      child: Text(
+                                        'Sakay na!',
+                                        textAlign: TextAlign.center,
+                                        style: TextStyle(fontSize: 15),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Expanded(
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: <Widget>[
+                                    TextButton(
+                                      onPressed: () {
+                                        Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) =>
+                                                  DriverPage()),
+                                        );
+                                      },
+                                      child: Text(
+                                        'Pasada na!',
+                                        textAlign: TextAlign.center,
+                                        style: TextStyle(fontSize: 15),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    )
                   ],
                 ),
               ),
