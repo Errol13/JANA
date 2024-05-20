@@ -4,6 +4,8 @@ class CustomButton extends StatelessWidget {
   final String text;
   final Color color;
   final double width; // New property to specify the button width
+  final Color borderColor; // New property for border color
+  final Color textColor; // New property for text color
   final VoidCallback onPressed; // Callback function for button press
 
   const CustomButton({
@@ -12,6 +14,8 @@ class CustomButton extends StatelessWidget {
     required this.color,
     required this.onPressed, // Pass the callback function
     this.width = 200, // Default to 200 width
+    this.borderColor = const Color(0xFFFA5FAE), // Default border color to pink
+    this.textColor = Colors.white, // Default text color to white
   }) : super(key: key);
 
   @override
@@ -25,11 +29,12 @@ class CustomButton extends StatelessWidget {
             color,
           ),
           foregroundColor: MaterialStateProperty.all<Color>(
-            Colors.white,
+            textColor, // Set text color
           ),
           shape: MaterialStateProperty.all<RoundedRectangleBorder>(
             RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(15),
+              side: BorderSide(color: borderColor), // Set border color
             ),
           ),
           padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
@@ -39,7 +44,7 @@ class CustomButton extends StatelessWidget {
         child: Text(
           text,
           style: TextStyle(
-            color: Colors.white,
+            color: textColor, // Set text color
             fontSize: 18,
           ),
         ),
@@ -47,3 +52,4 @@ class CustomButton extends StatelessWidget {
     );
   }
 }
+

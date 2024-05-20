@@ -3,6 +3,7 @@ import 'package:jana_project/reusable%20code/border_style.dart';
 import 'package:jana_project/reusable%20code/buttons.dart';
 import 'package:animated_toggle_switch/animated_toggle_switch.dart';
 import 'package:jana_project/screens/registration/signin_page.dart';
+import 'package:jana_project/screens/driver/driver_pickup.dart';
 
 class DacceptPage extends StatefulWidget {
   const DacceptPage({Key? key}) : super(key: key);
@@ -98,7 +99,7 @@ class _DacceptPageState extends State<DacceptPage> {
           child: Column(
             children: [
               SizedBox(
-                height: 300,
+                height: 400,
               ),
               Expanded(
                 child: Container(
@@ -201,68 +202,137 @@ class _DacceptPageState extends State<DacceptPage> {
                             ),
                           ],
                         ),
-                        SizedBox(height: 20),
-                        Row(
-                          children: [
-                            Expanded(
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
+                        SizedBox(height: 40),
+                        Padding(
+                          padding: EdgeInsets.only(
+                              left:
+                                  50.0), // Adjust the left padding value as needed
+                          child: Row(
+                            children: [
+                              // Column for images and vertical line
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
+                                  // Image for Pickup point
                                   Image.asset(
-                                    'assets/Final State.png', 
+                                    'assets/Final State.png',
+                                    width: 28,
+                                    height: 40,
+                                    fit: BoxFit.contain,
+                                  ),
+                                  // Vertical line
+                                  Container(
+                                    width: 2, // Width of the vertical line
+                                    height: 45, // Height of the vertical line
+                                    color: Colors
+                                        .grey, // Color of the vertical line
+                                  ),
+                                  // Image for Drop off point
+                                  Image.asset(
+                                    'assets/Location.png', // Assuming the same image, change if necessary
                                     width: 28,
                                     height: 37,
                                     fit: BoxFit.contain,
                                   ),
                                 ],
                               ),
-                            ),
-                            Expanded(
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Row(
-                                    children: [
-                                      Text('Pickup point'),
-                                    ],
-                                  ),
-                                  Row(
-                                    children: [
-                                      Text('Rizal Park',
-                                      style: TextStyle(
-                                        fontSize: 22,
-                                        fontWeight: FontWeight.bold,
-                                      )
-                                      )
-                                    ],
-                                  ),
-                                  SizedBox(height: 20),
-
-                                  Divider(
-                                    color: Color(
-                                        0xD9D9D9D9), // Change the color here
-                                  ),
-                                  SizedBox(height: 20),
-
-                                  Row(
-                                    children: [
-                                      Text('Drop off point'),
-                                    ],
-                                  ),
-                                  Row(
-                                    children: [
-                                      Text('SM Naga City',
-                                      style: TextStyle(
-                                        fontSize: 22,
-                                        fontWeight: FontWeight.bold,
-                                      )
-                                      )
-                                    ],
-                                  ),
-                                ],
+                              SizedBox(
+                                  width:
+                                      10), // Add some spacing between image column and text column
+                              // Column for texts
+                              Expanded(
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    // Pickup point section
+                                    Row(
+                                      children: [
+                                        Text('Pickup point'),
+                                      ],
+                                    ),
+                                    Row(
+                                      children: [
+                                        Text(
+                                          'Rizal Park',
+                                          style: TextStyle(
+                                            fontSize: 22,
+                                            fontWeight: FontWeight.bold,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                    SizedBox(height: 20),
+                                    Divider(
+                                      color: Color(0xD9D9D9D9),
+                                    ),
+                                    SizedBox(height: 20),
+                                    // Drop off point section
+                                    Row(
+                                      children: [
+                                        Text('Drop off point'),
+                                      ],
+                                    ),
+                                    Row(
+                                      children: [
+                                        Text(
+                                          'SM Naga City',
+                                          style: TextStyle(
+                                            fontSize: 22,
+                                            fontWeight: FontWeight.bold,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ],
+                                ),
                               ),
+                              Expanded(child: SizedBox()),
+                            ],
+                          ),
+                        ),
+                        SizedBox(height: 40),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            // Custom Button
+                            CustomButton(
+                              text: 'Accept',
+                              color:
+                                  Color(0xFFFA5FAE), // Set button color to pink
+                              onPressed: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => DpickupPage()),
+                                );
+                              },
                             ),
-                            Expanded(child: SizedBox()),
+                            // Spacer for some separation
+                            SizedBox(width: 10),
+                            // Text and Timer icon
+                            Row(
+                              children: [
+                                Text(
+                                  '30',
+                                  style: TextStyle(
+                                    fontSize:
+                                        18, // Adjust the font size as needed
+                                    fontWeight:
+                                        FontWeight.bold, // Make the text bold
+                                  ),
+                                ),
+                                SizedBox(
+                                    width:
+                                        5), // Add some space between the text and the icon
+                                Icon(
+                                  Icons.timer,
+                                  color:
+                                      Colors.grey, // Set the color of the icon
+                                  size:
+                                      24, // Adjust the size of the icon as needed
+                                ),
+                              ],
+                            ),
                           ],
                         ),
                       ],
