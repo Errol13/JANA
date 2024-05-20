@@ -79,14 +79,20 @@ class _SignInPageState extends State<SignInPage> {
     showDialog(
       context: context,
       builder: (ctx) => AlertDialog(
-        title: Text('Error', style: TextStyle(color: Color.fromARGB(255, 7, 7, 7),fontWeight: FontWeight.bold)),
+        title: Text('Error',
+            style: TextStyle(
+                color: Color.fromARGB(255, 7, 7, 7),
+                fontWeight: FontWeight.bold)),
         content: Text(message),
         actions: [
           TextButton(
             onPressed: () {
               Navigator.of(ctx).pop();
             },
-            child: const Text('Okay', style: TextStyle(color: Color(0xFFFA5FAE)),),
+            child: const Text(
+              'Okay',
+              style: TextStyle(color: Color(0xFFFA5FAE)),
+            ),
           ),
         ],
       ),

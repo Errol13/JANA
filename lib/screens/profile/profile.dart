@@ -5,6 +5,7 @@ import 'package:jana_project/reusable%20code/border_style.dart';
 import 'package:jana_project/reusable%20code/buttons.dart';
 import 'package:animated_toggle_switch/animated_toggle_switch.dart';
 import 'package:jana_project/screens/passenger/passenger_looking.dart';
+import 'package:jana_project/screens/profile/profile_email.dart';
 import 'package:jana_project/screens/registration/signin_page.dart';
 import 'package:card_loading/card_loading.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
@@ -166,7 +167,14 @@ class _ProfileState extends State<ProfilePage> {
                               Text('Email'),
                               Expanded(child: SizedBox()),
                               IconButton(
-                                onPressed: () {},
+                                onPressed: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            ProfileEmailPage()),
+                                  );
+                                },
                                 icon: Icon(
                                   Icons.edit,
                                   color: Color.fromARGB(255, 56, 46, 184),
