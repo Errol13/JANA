@@ -43,159 +43,220 @@ class _ProfileState extends State<ProfilePage> {
         ),
         child: Column(
           children: [
-            Image.asset('assets/Ellipse 11.png'),
             Container(
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.all(Radius.circular(15.0)),
-                  color: Colors.white,
-                  border: Border.all(width: 1),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.grey.withOpacity(0.9),
-                      spreadRadius: 5,
-                      blurRadius: 7,
-                      offset: Offset(1.0, 1.5),
+              height: 200,
+              width: 200,
+              child: Image.asset('assets/Ellipse 11.png'),
+            ),
+            Center(
+              child: Padding(
+                padding: const EdgeInsets.all(12.0),
+                child: SizedBox(
+                  height: 65,
+                  width: 350,
+                  child: Container(
+                    decoration: BoxDecoration(
+                      //DecorationImage
+                      border: Border.all(
+                          color: Colors.white,
+                          width: 1.0,
+                          style: BorderStyle.solid), //Border.all
+
+                      borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(10.0),
+                        topRight: Radius.circular(10.0),
+                        bottomLeft: Radius.circular(10.0),
+                        bottomRight: Radius.circular(10.0),
+                      ),
+                      //BorderRadius.only
+                      /************************************/
+                      /* The BoxShadow widget  is here */
+                      /************************************/
+                      boxShadow: [
+                        BoxShadow(
+                          color: Color.fromARGB(248, 116, 116, 116),
+                          blurRadius: 2.0,
+                          spreadRadius: 1.0,
+                        ), //BoxShadow
+                        BoxShadow(
+                          color: Colors.white,
+                          offset: const Offset(0.0, 0.0),
+                          blurRadius: 0.0,
+                          spreadRadius: 0.0,
+                        ), //BoxShadow
+                      ],
                     ),
-                  ]),
-              margin: const EdgeInsets.only(left: 20.0, right: 20.0),
-              child: Column(
-                children: [
-                  SizedBox(height: 10),
-                  Row(
-                    children: [
-                      SizedBox(
-                        width: 15,
+                    child: Container(
+                      margin: EdgeInsets.only(
+                        left: 10,
+                        right: 5,
                       ),
-                      Text('Name'),
-                      Expanded(child: SizedBox()),
-                      Icon(
-                        Icons.edit,
-                        color: Color.fromARGB(255, 56, 46, 184),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Row(
+                            children: [
+                              Text('Name'),
+                              Expanded(child: SizedBox()),
+                            ],
+                          ),
+                          SizedBox(
+                            height: 10,
+                          ),
+                          Text(
+                            'Miguel Toledana',
+                            style: TextStyle(
+                                fontSize: 18, fontWeight: FontWeight.w500),
+                          ),
+                        ],
                       ),
-                      SizedBox(
-                        width: 10,
-                      ),
-                    ],
-                  ),
-                  Row(
-                    children: [
-                      SizedBox(
-                        width: 15,
-                      ),
-                      Text(
-                        'Babe ko',
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold, fontSize: 20),
-                      )
-                    ],
-                  ),
-                  SizedBox(height: 10),
-                ],
-              ),
+                    ), //BoxDecoration
+                  ), //Container
+                ), //SizedBox
+              ), //Padding
             ),
-            SizedBox(
-              height: 13,
-            ),
-            Container(
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.all(Radius.circular(15.0)),
-                  color: Colors.white,
-                  border: Border.all(width: 1),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.grey.withOpacity(0.9),
-                      spreadRadius: 5,
-                      blurRadius: 7,
-                      offset: Offset(1.0, 1.5),
+            Center(
+              child: Padding(
+                padding: const EdgeInsets.all(12.0),
+                child: SizedBox(
+                  height: 73,
+                  width: 350,
+                  child: Container(
+                    decoration: BoxDecoration(
+                      //DecorationImage
+                      border: Border.all(
+                          color: Colors.white,
+                          width: 1.0,
+                          style: BorderStyle.solid), //Border.all
+
+                      borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(10.0),
+                        topRight: Radius.circular(10.0),
+                        bottomLeft: Radius.circular(10.0),
+                        bottomRight: Radius.circular(10.0),
+                      ),
+                      //BorderRadius.only
+                      /************************************/
+                      /* The BoxShadow widget  is here */
+                      /************************************/
+                      boxShadow: [
+                        BoxShadow(
+                          color: Color.fromARGB(248, 116, 116, 116),
+                          blurRadius: 2.0,
+                          spreadRadius: 1.0,
+                        ), //BoxShadow
+                        BoxShadow(
+                          color: Colors.white,
+                          offset: const Offset(0.0, 0.0),
+                          blurRadius: 0.0,
+                          spreadRadius: 0.0,
+                        ), //BoxShadow
+                      ],
                     ),
-                  ]),
-              margin: const EdgeInsets.only(left: 20.0, right: 20.0),
-              child: Column(
-                children: [
-                  SizedBox(height: 10),
-                  Row(
-                    children: [
-                      SizedBox(
-                        width: 15,
+                    child: Container(
+                      margin: EdgeInsets.only(
+                        left: 10,
+                        right: 5,
                       ),
-                      Text('Email'),
-                      Expanded(child: SizedBox()),
-                      Icon(
-                        Icons.edit,
-                        color: Color.fromARGB(255, 56, 46, 184),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Row(
+                            children: [
+                              Text('Email'),
+                              Expanded(child: SizedBox()),
+                              IconButton(
+                                onPressed: () {},
+                                icon: Icon(
+                                  Icons.edit,
+                                  color: Color.fromARGB(255, 56, 46, 184),
+                                ),
+                              )
+                            ],
+                          ),
+                          Text(
+                            'mt@gmail.com',
+                            style: TextStyle(
+                                fontSize: 18, fontWeight: FontWeight.w500),
+                          ),
+                        ],
                       ),
-                      SizedBox(
-                        width: 10,
-                      ),
-                    ],
-                  ),
-                  Row(
-                    children: [
-                      SizedBox(
-                        width: 15,
-                      ),
-                      Text(
-                        'msamonte@gmail.com',
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold, fontSize: 20),
-                      )
-                    ],
-                  ),
-                  SizedBox(height: 10),
-                ],
-              ),
+                    ), //BoxDecoration
+                  ), //Container
+                ), //SizedBox
+              ), //Padding
             ),
-            SizedBox(
-              height: 13,
-            ),
-            Container(
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.all(Radius.circular(15.0)),
-                  color: Colors.white,
-                  border: Border.all(width: 1),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.grey.withOpacity(0.9),
-                      spreadRadius: 5,
-                      blurRadius: 7,
-                      offset: Offset(1.0, 1.5),
+            Center(
+              child: Padding(
+                padding: const EdgeInsets.all(12.0),
+                child: SizedBox(
+                  height: 75,
+                  width: 350,
+                  child: Container(
+                    decoration: BoxDecoration(
+                      //DecorationImage
+                      border: Border.all(
+                          color: Colors.white,
+                          width: 1.0,
+                          style: BorderStyle.solid), //Border.all
+
+                      borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(10.0),
+                        topRight: Radius.circular(10.0),
+                        bottomLeft: Radius.circular(10.0),
+                        bottomRight: Radius.circular(10.0),
+                      ),
+                      //BorderRadius.only
+                      /************************************/
+                      /* The BoxShadow widget  is here */
+                      /************************************/
+                      boxShadow: [
+                        BoxShadow(
+                          color: Color.fromARGB(248, 116, 116, 116),
+                          blurRadius: 2.0,
+                          spreadRadius: 1.0,
+                        ), //BoxShadow
+                        BoxShadow(
+                          color: Colors.white,
+                          offset: const Offset(0.0, 0.0),
+                          blurRadius: 0.0,
+                          spreadRadius: 0.0,
+                        ), //BoxShadow
+                      ],
                     ),
-                  ]),
-              margin: const EdgeInsets.only(left: 20.0, right: 20.0),
-              child: Column(
-                children: [
-                  SizedBox(height: 10),
-                  Row(
-                    children: [
-                      SizedBox(
-                        width: 15,
+                    child: Container(
+                      margin: EdgeInsets.only(
+                        left: 10,
+                        right: 5,
                       ),
-                      Text('Mobile Number'),
-                      Expanded(child: SizedBox()),
-                      Icon(Icons.edit, color: Color.fromARGB(255, 56, 46, 184)),
-                      SizedBox(
-                        width: 10,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Row(
+                            children: [
+                              Text('Mobile Number'),
+                              Expanded(child: SizedBox()),
+                              IconButton(
+                                onPressed: () {},
+                                icon: Icon(
+                                  Icons.edit,
+                                  color: Color.fromARGB(255, 56, 46, 184),
+                                ),
+                              )
+                            ],
+                          ),
+                          Text(
+                            '09123456789',
+                            style: TextStyle(
+                                fontSize: 18, fontWeight: FontWeight.w500),
+                          ),
+                        ],
                       ),
-                    ],
-                  ),
-                  Row(
-                    children: [
-                      SizedBox(
-                        width: 15,
-                      ),
-                      Text(
-                        '09786651527',
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold, fontSize: 20),
-                      )
-                    ],
-                  ),
-                  SizedBox(
-                    height: 10,
-                  ),
-                ],
-              ),
-            )
+                    ), //BoxDecoration
+                  ), //Container
+                ), //SizedBox
+              ), //Padding
+            ),
           ],
         ),
       ),

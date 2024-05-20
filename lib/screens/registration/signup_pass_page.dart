@@ -235,7 +235,7 @@ class _RootPageState extends State<RootPage> {
                           builder: (context) {
                             return const Center(
                               child: CircularProgressIndicator(
-                                color: Color(0xFF276A7B),
+                                color: Color(0xFFFA5FAE),
                               ),
                             );
                           },
@@ -285,7 +285,6 @@ class _RootPageState extends State<RootPage> {
                           } catch (e) {
                             print(e);
                           }
-                        
                       }
                     },
                   ),
