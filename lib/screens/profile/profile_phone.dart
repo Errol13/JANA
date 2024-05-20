@@ -4,20 +4,21 @@ import 'package:flutter/widgets.dart';
 import 'package:jana_project/reusable%20code/border_style.dart';
 import 'package:jana_project/reusable%20code/buttons.dart';
 import 'package:animated_toggle_switch/animated_toggle_switch.dart';
+import 'package:jana_project/screens/passenger/homepage_passenger.dart';
 import 'package:jana_project/screens/passenger/passenger_looking.dart';
-import 'package:jana_project/screens/profile/email_verified.dart';
+import 'package:jana_project/screens/profile/email_verification.dart';
 import 'package:jana_project/screens/registration/signin_page.dart';
 import 'package:card_loading/card_loading.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
 
-class EmailVerificationPage extends StatefulWidget {
-  const EmailVerificationPage({Key? key}) : super(key: key);
+class ProfileNumberPage extends StatefulWidget {
+  const ProfileNumberPage({Key? key}) : super(key: key);
 
   @override
-  _EmailVerificationState createState() => _EmailVerificationState();
+  _ProfileNumberState createState() => _ProfileNumberState();
 }
 
-class _EmailVerificationState extends State<EmailVerificationPage> {
+class _ProfileNumberState extends State<ProfileNumberPage> {
   @override
   Widget build(BuildContext context) {
     ThemeData theme = Theme.of(context);
@@ -26,6 +27,10 @@ class _EmailVerificationState extends State<EmailVerificationPage> {
       appBar: AppBar(
         iconTheme: IconThemeData(color: Color.fromARGB(255, 56, 46, 184)),
         backgroundColor: Color.fromARGB(255, 255, 255, 255),
+        title: Text(
+          'Mobile Number',
+          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+        ),
       ),
       body: Container(
         decoration: BoxDecoration(
@@ -49,44 +54,56 @@ class _EmailVerificationState extends State<EmailVerificationPage> {
                   )
                 ],
               ),
-              Expanded(child: SizedBox()),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Container(
-                    height: 100,
-                    width: 110,
-                    padding: EdgeInsets.all(15),
-                    alignment: Alignment.center,
-                    child: Image.asset('assets/Validation.png'),
-                  )
-                ],
+              Container(
+                padding: EdgeInsets.all(15),
+                child: Text(
+                    'Make sure that it is correct and working mobile number'),
               ),
               Container(
-                alignment: Alignment.center,
-                margin: EdgeInsets.only(left: 15, right: 15, bottom: 15),
-                child: Text(
-                  "Verify your email address to get started",
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+                padding: EdgeInsets.all(15),
+                child: SizedBox(
+                  width: 400,
+                  child: TextField(
+                    decoration: InputDecoration(
+                      labelText:
+                          'Mobile Number', // Create a text input field for the user's email.
+                      filled: true,
+                      fillColor: Colors.white,
+                      labelStyle: const TextStyle(
+                        color: Color(0xff3d3e3f),
+                        fontSize: 16,
+                        fontWeight: FontWeight.w500,
+                      ),
+
+                      focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(15.0),
+                        borderSide: const BorderSide(
+                          color: Color.fromARGB(
+                              106, 0, 0, 0), // Change the border color here
+                          width: 2.0, // Adjust the border width as needed
+                        ),
+                      ),
+                      //enabled border styling
+                      enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(15.0),
+                        borderSide: const BorderSide(
+                          color:
+                              Color(0xff72728b), // Change the border color here
+                          width: 1.0, // Adjust the border width as needed
+                        ),
+                      ),
+
+                      contentPadding: const EdgeInsets.symmetric(
+                          vertical: 12.0, horizontal: 19.0),
+                    ),
+                    keyboardType: TextInputType
+                        .emailAddress, // Set keyboard type for email.
+                    style: const TextStyle(
+                      color: Color.fromARGB(255, 0, 0, 0),
+                    ),
+                  ),
                 ),
               ),
-              Container(
-                  alignment: Alignment.center,
-                  margin: EdgeInsets.only(left: 15, right: 15, bottom: 15),
-                  child: Column(
-                    children: [
-                      Text(
-                        "This helps us mitigate fraud and keep your",
-                        style: TextStyle(
-                            fontWeight: FontWeight.w300, fontSize: 15),
-                      ),
-                      Text(
-                        "personal data safe",
-                        style: TextStyle(
-                            fontWeight: FontWeight.w300, fontSize: 15),
-                      ),
-                    ],
-                  )),
               Expanded(child: SizedBox()),
               Container(
                 height: 100,
@@ -107,16 +124,17 @@ class _EmailVerificationState extends State<EmailVerificationPage> {
                   alignment: Alignment.center,
                   child: Container(
                     height: 50,
+                    width: 250,
                     child: ElevatedButton(
                         onPressed: () {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => EmailVerifiedPage()),
+                                builder: (context) => PhomePage()),
                           );
                         },
                         child: Text(
-                          'Send verification email',
+                          'Save',
                           style: TextStyle(color: Colors.white, fontSize: 20),
                         ),
                         style: ElevatedButton.styleFrom(

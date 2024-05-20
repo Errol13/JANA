@@ -4,20 +4,20 @@ import 'package:flutter/widgets.dart';
 import 'package:jana_project/reusable%20code/border_style.dart';
 import 'package:jana_project/reusable%20code/buttons.dart';
 import 'package:animated_toggle_switch/animated_toggle_switch.dart';
+import 'package:jana_project/screens/passenger/homepage_passenger.dart';
 import 'package:jana_project/screens/passenger/passenger_looking.dart';
-import 'package:jana_project/screens/profile/email_verified.dart';
 import 'package:jana_project/screens/registration/signin_page.dart';
 import 'package:card_loading/card_loading.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
 
-class EmailVerificationPage extends StatefulWidget {
-  const EmailVerificationPage({Key? key}) : super(key: key);
+class EmailVerifiedPage extends StatefulWidget {
+  const EmailVerifiedPage({Key? key}) : super(key: key);
 
   @override
-  _EmailVerificationState createState() => _EmailVerificationState();
+  _EmailVerifiedState createState() => _EmailVerifiedState();
 }
 
-class _EmailVerificationState extends State<EmailVerificationPage> {
+class _EmailVerifiedState extends State<EmailVerifiedPage> {
   @override
   Widget build(BuildContext context) {
     ThemeData theme = Theme.of(context);
@@ -63,25 +63,29 @@ class _EmailVerificationState extends State<EmailVerificationPage> {
                 ],
               ),
               Container(
-                alignment: Alignment.center,
-                margin: EdgeInsets.only(left: 15, right: 15, bottom: 15),
-                child: Text(
-                  "Verify your email address to get started",
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
-                ),
-              ),
+                  alignment: Alignment.center,
+                  margin: EdgeInsets.only(left: 15, right: 15, bottom: 15),
+                  child: Column(
+                    children: [
+                      Text(
+                        "We've sent a verification link to",
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, fontSize: 18),
+                      ),
+                      Text(
+                        "msamonte2@gmail.com",
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, fontSize: 18),
+                      ),
+                    ],
+                  )),
               Container(
                   alignment: Alignment.center,
                   margin: EdgeInsets.only(left: 15, right: 15, bottom: 15),
                   child: Column(
                     children: [
                       Text(
-                        "This helps us mitigate fraud and keep your",
-                        style: TextStyle(
-                            fontWeight: FontWeight.w300, fontSize: 15),
-                      ),
-                      Text(
-                        "personal data safe",
+                        "Please check the verification link in your inbox",
                         style: TextStyle(
                             fontWeight: FontWeight.w300, fontSize: 15),
                       ),
@@ -89,7 +93,7 @@ class _EmailVerificationState extends State<EmailVerificationPage> {
                   )),
               Expanded(child: SizedBox()),
               Container(
-                height: 100,
+                height: 150,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.vertical(
                     top: Radius.circular(30),
@@ -103,26 +107,54 @@ class _EmailVerificationState extends State<EmailVerificationPage> {
                     ),
                   ),
                 ),
-                child: Container(
-                  alignment: Alignment.center,
-                  child: Container(
-                    height: 50,
-                    child: ElevatedButton(
-                        onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => EmailVerifiedPage()),
-                          );
-                        },
-                        child: Text(
-                          'Send verification email',
-                          style: TextStyle(color: Colors.white, fontSize: 20),
-                        ),
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: Color(0xffFA5FAE),
-                        )),
-                  ),
+                child: Column(
+                  children: [
+                    Container(
+                      padding: EdgeInsets.all(15),
+                      alignment: Alignment.center,
+                      child: Container(
+                        height: 50,
+                        width: 250,
+                        child: ElevatedButton(
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => PhomePage()),
+                              );
+                            },
+                            child: Text(
+                              'Check inbox',
+                              style:
+                                  TextStyle(color: Colors.white, fontSize: 20),
+                            ),
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: Color(0xffFA5FAE),
+                            )),
+                      ),
+                    ),
+                    Container(
+                      padding: EdgeInsets.only(
+                        left: 15,
+                        right: 15,
+                        bottom: 15,
+                      ),
+                      alignment: Alignment.center,
+                      child: Container(
+                        height: 50,
+                        child: ElevatedButton(
+                            onPressed: () {},
+                            child: Text(
+                              'Resend verification email',
+                              style: TextStyle(
+                                  color: Color(0xffFA5FAE), fontSize: 20),
+                            ),
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: Colors.white,
+                            )),
+                      ),
+                    ),
+                  ],
                 ),
               )
             ],

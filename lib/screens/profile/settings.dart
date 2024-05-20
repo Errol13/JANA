@@ -4,6 +4,7 @@ import 'package:flutter/widgets.dart';
 import 'package:jana_project/reusable%20code/border_style.dart';
 import 'package:jana_project/reusable%20code/buttons.dart';
 import 'package:animated_toggle_switch/animated_toggle_switch.dart';
+import 'package:jana_project/screens/passenger/homepage_passenger.dart';
 import 'package:jana_project/screens/passenger/passenger_looking.dart';
 import 'package:jana_project/screens/registration/signin_page.dart';
 import 'package:card_loading/card_loading.dart';
@@ -163,7 +164,45 @@ class _SettingsState extends State<SettingsPage> {
                       color: Colors.red,
                       decoration: TextDecoration.underline,
                       decorationColor: Colors.red),
-                ))
+                )),
+            Expanded(child: SizedBox()),
+            Container(
+              height: 100,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.vertical(
+                  top: Radius.circular(30),
+                ),
+                color: Color.fromARGB(255, 255, 255, 255),
+                border: Border(
+                  top: BorderSide(
+                    //                    <--- top side
+                    color: Color.fromARGB(100, 0, 0, 0),
+                    width: 0.5,
+                  ),
+                ),
+              ),
+              child: Container(
+                alignment: Alignment.center,
+                child: Container(
+                  height: 50,
+                  width: 250,
+                  child: ElevatedButton(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => PhomePage()),
+                        );
+                      },
+                      child: Text(
+                        'Save',
+                        style: TextStyle(color: Colors.white, fontSize: 20),
+                      ),
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Color(0xffFA5FAE),
+                      )),
+                ),
+              ),
+            )
           ],
         ),
       ),

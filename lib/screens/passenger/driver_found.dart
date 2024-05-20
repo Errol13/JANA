@@ -93,8 +93,7 @@ class _DriverFoundState extends State<DriverFoundPage> {
                       width: 20,
                     ),
                     Image.asset(
-                      'assets/Ellipse 11.png',
-                      scale: 6,
+                      'assets/pb.png',
                     ),
                     SizedBox(
                       width: 10,
@@ -105,7 +104,7 @@ class _DriverFoundState extends State<DriverFoundPage> {
                         Row(
                           children: [
                             Text(
-                              'Miguel Samonte',
+                              'Phoebe Castro',
                               style: TextStyle(
                                   fontSize: 16, fontWeight: FontWeight.bold),
                             ),
@@ -290,8 +289,7 @@ class _DriverFoundState extends State<DriverFoundPage> {
                                 Column(
                                   children: [
                                     Image.asset(
-                                      'assets/Ellipse 11.png',
-                                      scale: 5,
+                                      'assets/pb.png',
                                     )
                                   ],
                                 ),
@@ -302,13 +300,13 @@ class _DriverFoundState extends State<DriverFoundPage> {
                                       height: 10,
                                     ),
                                     Text(
-                                      'Miguel Toledana',
+                                      'Phoebe Castro',
                                       style: TextStyle(
                                           fontWeight: FontWeight.bold,
                                           fontSize: 20),
                                     ),
                                     Text(
-                                      'ACM 143',
+                                      'ABC 123',
                                       style: TextStyle(fontSize: 15),
                                     ),
                                     Text('091234567891',

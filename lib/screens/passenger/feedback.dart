@@ -228,8 +228,7 @@ class _FeedBackState extends State<FeedBackPage> {
                                 Column(
                                   children: [
                                     Image.asset(
-                                      'assets/Ellipse 11.png',
-                                      scale: 5,
+                                      'assets/pb.png',
                                     )
                                   ],
                                 ),
@@ -240,13 +239,13 @@ class _FeedBackState extends State<FeedBackPage> {
                                       height: 10,
                                     ),
                                     Text(
-                                      'Miguel Toledana',
+                                      'Phoebe Castro',
                                       style: TextStyle(
                                           fontWeight: FontWeight.bold,
                                           fontSize: 20),
                                     ),
                                     Text(
-                                      'ACM 143',
+                                      'ABC 123',
                                       style: TextStyle(fontSize: 15),
                                     ),
                                     Text('091234567891',
